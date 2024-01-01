@@ -1,0 +1,821 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`changeLog generates the correct changelog 1`] = `
+[
+  "
+### Added goals",
+  "* Goal *Defeat 10 Different Stalfos* was added",
+  "
+### Changed goals",
+  "
+**Fill 20 Item Inventory Slots**",
+  "* Changed type **jabu** from **3.75** to **1.5**",
+  "* Added type **rang** with value **2.75**",
+  "* Added type **zfadult** with value **2**",
+  "* Added type **zfchild** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "* Removed subtype **bulletbag** (was **0.5**)",
+  "
+**Open All 6 Gold Rupee Chests**",
+  "* Changed rowtype **bottle** from **0** to **1**",
+  "
+**Both Rusty Switches in Spirit Temple**",
+  "* Changed type **fire** from **7** to **5**",
+  "* Added type **strength** with value **1**",
+  "* Added type **volv** with value **2**",
+  "* Removed subtype **incgorons** (was **100**)",
+  "
+**Clear 10 Silver Rupee Rooms**",
+  "* Added type **zfadult** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "* Added subtype **zfboth** with value **-1**",
+  "* Added subtype **zfchild** with value **1**",
+  "
+**3 Swords, Tunics, Boots, and Shields**",
+  "* Changed type **gtunic** from **1** to **1.25**",
+  "* Changed type **swords** from **3** to **1.5**",
+  "* Added type **zfadult** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "* Added subtype **cuccorba** with value **1**",
+  "* Added subtype **zfboth** with value **-1**",
+  "* Added subtype **zfchild** with value **1**",
+  "
+**9 Hearts (no duping)**",
+  "* Changed subtype **poachers** from **2.5** to **3.5**",
+  "* Changed rowtype **ms** from **6.5** to **4**",
+  "
+**10 Songs**",
+  "* Changed **time** from **16.25** to **15.75**",
+  "* Changed subtype **hearts3** from **0.75** to **1.5**",
+  "* Changed subtype **hearts4** from **1** to **0.75**",
+  "
+**30 Different Skulltulas**",
+  "* Added subtype **rang** with value **2.75**",
+  "* Removed subtype **jabu** (was **3.75**)",
+  "
+**All 3 Elemental Arrows**",
+  "* Removed type **inclacs** (was **100**)",
+  "* Changed subtype **texttransfer** from **2.75** to **1.75**",
+  "
+**1 Skulltula from each Adult Dungeon**",
+  "* Removed subtype **botw** (was **-1**)",
+  "* Removed subtype **childchu** (was **-2.5**)",
+  "* Removed subtype **incminuet** (was **100**)",
+  "
+**Biggoron's Sword**",
+  "* Changed **skill** from **0.75** to **0.5**",
+  "* Changed **time** from **15.5** to **14.5**",
+  "* Changed type **swords** from **3** to **1**",
+  "
+**Two Fairy Spells**",
+  "* Added type **zfadult** with value **2**",
+  "* Added type **zfboth** with value **-2**",
+  "* Added type **zfchild** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "* Removed type **incfairy** (was **100**)",
+  "
+**All 4 Market area Skulltulas**",
+  "* Removed type **incfboss** (was **100**)",
+  "* Removed subtype **incminuet** (was **100**)",
+  "
+**3 Shields & 3 Boots**",
+  "* Added type **zfadult** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "* Added subtype **zfboth** with value **-1**",
+  "* Added subtype **zfchild** with value **1**",
+  "* Changed rowtype **bottle** from **0.5** to **1.5**",
+  "
+**Obtain 4 Different Heart Containers**",
+  "* Added type **bongo** with value **2.25**",
+  "* Added type **inchcs** with value **100**",
+  "* Added type **morpha** with value **2.25**",
+  "* Changed type **water** from **4.25** to **2**",
+  "* Removed type **inchearts** (was **100**)",
+  "* Removed type **shadow** (was **2.25**)",
+  "* Added subtype **inchearts** with value **100**",
+  "* Added subtype **rang** with value **2.25**",
+  "* Added subtype **volv** with value **4**",
+  "* Removed subtype **fire** (was **4**)",
+  "* Removed subtype **jabu** (was **4.25**)",
+  "
+**1 Unused Small Key in each Adult Dungeon**",
+  "* Removed subtype **incminuet** (was **100**)",
+  "
+**Open 3 Boss Key Doors**",
+  "* Added type **morpha** with value **1**",
+  "
+**7 Compasses**",
+  "* Added type **inccompass** with value **100**",
+  "* Removed type **incmc** (was **100**)",
+  "
+**7 Maps**",
+  "* Added type **incmap** with value **100**",
+  "* Removed type **incmc** (was **100**)",
+  "* Changed rowtype **bottle** from **0.5** to **100**",
+  "
+**Green Gauntlets**",
+  "* Added type **cuccorba** with value **100**",
+  "* Added type **incstrength** with value **100**",
+  "* Changed type **texttransfer** from **3** to **4.5**",
+  "* Changed subtype **bulletbag** from **100** to **-3**",
+  "* Added subtype **quiverrba** with value **-3**",
+  "* Added subtype **songs10** with value **-3**",
+  "* Removed subtype **bombbag** (was **100**)",
+  "* Removed subtype **songs4** (was **3**)",
+  "
+**All 5 Skulltulas in Water Temple**",
+  "* Removed type **ice** (was **1.5**)",
+  "* Changed subtype **bbprize** from **-6** to **-2**",
+  "* Removed subtype **claimcheck** (was **1**)",
+  "
+**Clear 8 Silver Rupee Rooms**",
+  "* Added type **zfadult** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "* Added subtype **zfboth** with value **-1**",
+  "* Added subtype **zfchild** with value **1**",
+  "
+**Din's Fire**",
+  "* Removed subtype **incfairy** (was **100**)",
+  "* Removed subtype **songs4** (was **1.75**)",
+  "* Changed rowtype **bottle** from **0** to **0.5**",
+  "
+**Goron Bracelet**",
+  "* Added type **incstrength** with value **100**",
+  "* Added subtype **quiverrba** with value **-3**",
+  "* Removed subtype **bombbag** (was **100**)",
+  "* Removed subtype **songs4** (was **3**)",
+  "* Removed subtype **strength** (was **100**)",
+  "* Changed rowtype **bottle** from **0** to **0.5**",
+  "
+**Fire Medallion**",
+  "* Changed type **fire** from **10** to **6**",
+  "* Added type **volv** with value **4**",
+  "* Changed rowtype **bottle** from **0.5** to **100**",
+  "
+**Free all 9 Gorons in Fire Temple**",
+  "* Changed type **fire** from **8** to **6**",
+  "* Added type **volv** with value **2**",
+  "* Removed type **incfirebk** (was **100**)",
+  "* Removed type **incflare** (was **100**)",
+  "* Removed type **incgorons** (was **100**)",
+  "* Changed rowtype **bottle** from **0.5** to **1.5**",
+  "
+**Open the Final Door of Spirit Trial**",
+  "* Removed type **incmirror** (was **100**)",
+  "
+**Open the Final Door of Shadow Trial**",
+  "* Changed type **fire** from **7** to **5**",
+  "* Added type **shtrial** with value **2**",
+  "* Added type **volv** with value **2**",
+  "* Removed type **incshtrial** (was **100**)",
+  "
+**3 Shields & 3 Tunics**",
+  "* Changed type **gtunic** from **1** to **1.25**",
+  "* Added type **zfadult** with value **1.5**",
+  "* Removed type **fountain** (was **1.5**)",
+  "* Changed rowtype **bottle** from **0.5** to **1.5**",
+  "
+**8 Hearts (no duping)**",
+  "* Changed subtype **poachers** from **2.5** to **3**",
+  "* Changed rowtype **ms** from **5.25** to **3.25**",
+  "
+**Quiver (50)**",
+  "* Added type **quiverrba** with value **100**",
+  "* Removed type **bombbag** (was **100**)",
+  "* Removed type **spirit** (was **0.5**)",
+  "
+**Defeat Meg (Purple Poe)**",
+  "* Removed type **incforest** (was **100**)",
+  "* Removed subtype **incminuet** (was **100**)",
+  "* Changed rowtype **bottle** from **0.5** to **1**",
+  "
+**Beat the Fire Temple**",
+  "* Changed type **fire** from **10** to **6**",
+  "* Added type **volv** with value **4**",
+  "
+**Obtain all 5 Small Keys in Shadow Temple**",
+  "* Changed rowtype **bottle** from **0** to **100**",
+  "
+**Open the Final Door of Water Trial**",
+  "* Changed type **fire** from **7** to **5**",
+  "* Added type **volv** with value **2**",
+  "
+**3 Swords & 3 Shields**",
+  "* Changed type **swords** from **3** to **1.5**",
+  "* Added subtype **cuccorba** with value **1**",
+  "
+**Obtain 16 Different Heart Pieces**",
+  "* Added type **inchps** with value **100**",
+  "* Added type **zfadult** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "* Removed type **inchearts** (was **100**)",
+  "* Added subtype **inchearts** with value **100**",
+  "* Added subtype **zfboth** with value **-1**",
+  "* Added subtype **zfchild** with value **1**",
+  "
+**Nayru's Love**",
+  "* Removed subtype **incfairy** (was **100**)",
+  "
+**All 5 Lake Hylia Skulltulas**",
+  "* Added type **zfadult** with value **2**",
+  "* Added type **zfchild** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "* Added subtype **childreset** with value **1.25**",
+  "* Removed subtype **incirons** (was **100**)",
+  "
+**Defeat Volvagia**",
+  "* Changed type **fire** from **9** to **5**",
+  "* Added type **volv** with value **4**",
+  "* Changed rowtype **bottle** from **100** to **1.5**",
+  "
+**All 5 Skulltulas in Fire Temple**",
+  "* Changed rowtype **bottle** from **0** to **1.5**",
+  "
+**6 Compasses**",
+  "* Added type **inccompass** with value **100**",
+  "* Removed type **incmc** (was **100**)",
+  "
+**Frog's HP**",
+  "* Removed type **incfboss** (was **100**)",
+  "* Removed subtype **incminuet** (was **100**)",
+  "
+**Defeat both Flare Dancers**",
+  "* Changed type **fire** from **8** to **6**",
+  "* Added type **volv** with value **1**",
+  "* Removed type **incflare** (was **100**)",
+  "* Removed subtype **incgorons** (was **100**)",
+  "* Changed rowtype **bottle** from **0.5** to **1.5**",
+  "
+**Blue Gauntlets**",
+  "* Added type **cuccorba** with value **100**",
+  "* Added type **incstrength** with value **100**",
+  "* Changed subtype **bulletbag** from **100** to **-3**",
+  "* Added subtype **quiverrba** with value **-1**",
+  "* Removed subtype **bombbag** (was **100**)",
+  "
+**Spirit Temple Boss Key**",
+  "* Removed type **inclacs** (was **100**)",
+  "* Removed type **legitlacs** (was **100**)",
+  "
+**9 Songs**",
+  "* Changed **time** from **10.25** to **9.75**",
+  "* Changed subtype **hearts3** from **0.75** to **1.5**",
+  "
+**3 Shields**",
+  "* Changed rowtype **bottle** from **0** to **1**",
+  "
+**6 Maps**",
+  "* Added type **incmap** with value **100**",
+  "* Removed type **incmc** (was **100**)",
+  "* Changed rowtype **bottle** from **0** to **1.5**",
+  "
+**Obtain 3 Different Heart Containers**",
+  "* Added type **bongo** with value **2.25**",
+  "* Added type **inchcs** with value **100**",
+  "* Removed type **inchearts** (was **100**)",
+  "* Removed type **shadow** (was **2.25**)",
+  "* Added subtype **inchearts** with value **100**",
+  "* Added subtype **morpha** with value **2.25**",
+  "* Added subtype **rang** with value **2.25**",
+  "* Added subtype **volv** with value **4**",
+  "* Changed subtype **water** from **4.25** to **2**",
+  "* Removed subtype **fire** (was **4**)",
+  "* Removed subtype **jabu** (was **4.25**)",
+  "
+**Light Arrows**",
+  "* Removed type **inclacs** (was **100**)",
+  "
+**Saria's Song**",
+  "* Removed subtype **songs4** (was **3**)",
+  "
+**5 Zora area HPs**",
+  "* Added type **zfadult** with value **2**",
+  "* Added type **zfchild** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "* Removed subtype **incirons** (was **100**)",
+  "
+**All 4 Wasteland/ Colossus area Skulltulas**",
+  "* Changed subtype **child2** from **1** to **2.5**",
+  "
+**8 Different Unused Keys in Gerudo Training Grounds**",
+  "* Removed subtype **bulletbag** (was **100**)",
+  "
+**Open Forest Temple Boss Key Door**",
+  "* Added type **dc** with value **2**",
+  "* Removed type **incforest** (was **100**)",
+  "* Added subtype **bbprize** with value **-2**",
+  "
+**Farore's Wind**",
+  "* Added type **zfadult** with value **2**",
+  "* Added type **zfboth** with value **-2**",
+  "* Added type **zfchild** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "* Removed subtype **incfairy** (was **100**)",
+  "* Changed rowtype **bottle** from **0** to **100**",
+  "
+**All 8 Zora's Domain area Skulltulas**",
+  "* Added type **zfadult** with value **2**",
+  "* Added type **zfchild** with value **2**",
+  "* Removed type **childchu** (was **0**)",
+  "* Removed type **fountain** (was **2**)",
+  "* Added subtype **rang** with value **0.5**",
+  "* Added subtype **strength** with value **0.5**",
+  "* Removed subtype **jabu** (was **0.5**)",
+  "
+**Forest Temple Boss Key**",
+  "* Added type **dc** with value **2**",
+  "* Removed type **incforest** (was **100**)",
+  "* Added subtype **bbprize** with value **-2**",
+  "* Removed subtype **incminuet** (was **100**)",
+  "* Changed rowtype **bottle** from **0.5** to **1**",
+  "
+**Obtain all 5 Small Keys in Forest Temple**",
+  "* Removed type **incforest** (was **100**)",
+  "* Removed subtype **incminuet** (was **100**)",
+  "* Changed rowtype **bottle** from **0.5** to **1**",
+  "
+**Map & Compass in Forest Temple**",
+  "* Removed type **incforest** (was **100**)",
+  "* Removed subtype **incminuet** (was **100**)",
+  "* Changed rowtype **bottle** from **0.5** to **1**",
+  "
+**Obtain all 8 Small Keys in Fire Temple**",
+  "* Changed rowtype **bottle** from **0.5** to **1.5**",
+  "
+**Megaton Hammer**",
+  "* Changed type **fire** from **7** to **5**",
+  "* Added type **volv** with value **2**",
+  "* Removed subtype **incgorons** (was **100**)",
+  "* Changed rowtype **bottle** from **0.5** to **1.5**",
+  "
+**3 Skulltulas in Water Temple**",
+  "* Removed type **ice** (was **1.5**)",
+  "* Changed subtype **bbprize** from **-4** to **-2**",
+  "* Added subtype **poachers** with value **0.75**",
+  "
+**Mirror Shield**",
+  "* Removed type **incmirror** (was **100**)",
+  "* Removed type **incshield** (was **100**)",
+  "* Removed type **incspboss** (was **100**)",
+  "* Changed rowtype **bottle** from **0** to **1**",
+  "
+**Silver Gauntlets**",
+  "* Added type **incstrength** with value **100**",
+  "* Removed subtype **bombbag** (was **100**)",
+  "* Changed rowtype **bottle** from **0.5** to **1**",
+  "
+**3 Tunics & 3 Boots**",
+  "* Changed type **gtunic** from **1** to **1.25**",
+  "* Added type **zfadult** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "* Added subtype **zfboth** with value **-1**",
+  "* Added subtype **zfchild** with value **1**",
+  "
+**5 Compasses**",
+  "* Added type **inccompass** with value **100**",
+  "* Removed type **incmc** (was **100**)",
+  "
+**Beat Jabu-Jabu's Belly**",
+  "* Changed type **jabu** from **5.75** to **3.5**",
+  "* Added type **rang** with value **2.75**",
+  "* Added type **zfadult** with value **2**",
+  "* Added type **zfboth** with value **-2**",
+  "* Added type **zfchild** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "
+**Defeat Amy (Green Poe)**",
+  "* Added type **hovers** with value **2.5**",
+  "* Removed type **incforest** (was **100**)",
+  "* Removed subtype **botw** (was **-1**)",
+  "* Removed subtype **childchu** (was **-2.5**)",
+  "* Removed subtype **hovers** (was **1**)",
+  "* Removed subtype **incminuet** (was **100**)",
+  "* Changed rowtype **bottle** from **0.5** to **1**",
+  "
+**Map & Compass in Fire Temple**",
+  "* Changed rowtype **bottle** from **0.5** to **1.5**",
+  "
+**Desert Colossus HP**",
+  "* Changed rowtype **bottle** from **0** to **1**",
+  "
+**Defeat Nabooru-Knuckle**",
+  "* Removed type **incspboss** (was **100**)",
+  "
+**Open 2 Boss Key Doors**",
+  "* Added type **morpha** with value **1**",
+  "* Changed rowtype **bottle** from **0** to **100**",
+  "
+**3 Swords & 3 Boots**",
+  "* Changed type **swords** from **3** to **1.5**",
+  "* Added type **zfadult** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "* Added subtype **cuccorba** with value **1**",
+  "* Added subtype **zfboth** with value **-1**",
+  "* Added subtype **zfchild** with value **1**",
+  "
+**7 Hearts (no duping)**",
+  "* Changed rowtype **ms** from **4** to **2.5**",
+  "
+**Keaton Mask**",
+  "* Removed subtype **songs4** (was **1.75**)",
+  "
+**Defeat Barinade**",
+  "* Changed type **jabu** from **6.25** to **3.5**",
+  "* Added type **rang** with value **2.75**",
+  "* Added type **zfadult** with value **2**",
+  "* Added type **zfboth** with value **-2**",
+  "* Added type **zfchild** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "
+**Fairy Bow**",
+  "* Removed type **incforest** (was **100**)",
+  "* Removed subtype **incminuet** (was **100**)",
+  "* Changed rowtype **bottle** from **0.5** to **1**",
+  "
+**1 Skulltula from each Child Dungeon**",
+  "* Changed type **jabu** from **2** to **0.75**",
+  "* Added type **zfadult** with value **2**",
+  "* Added type **zfboth** with value **-2**",
+  "* Added type **zfchild** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "* Added subtype **hovers** with value **0.75**",
+  "
+**8 Songs**",
+  "* Changed **time** from **7.75** to **7.5**",
+  "* Changed subtype **hearts3** from **0.75** to **1.5**",
+  "
+**3 Boss Keys**",
+  "* Added subtype **claimcheck** with value **1**",
+  "* Changed rowtype **bottle** from **0.5** to **100**",
+  "
+**3 Boots**",
+  "* Added type **zfadult** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "* Added subtype **zfboth** with value **-1**",
+  "* Added subtype **zfchild** with value **1**",
+  "
+**All 4 Gerudo Valley area Skulltulas**",
+  "* Added subtype **rang** with value **0.5**",
+  "* Removed subtype **jabu** (was **0.5**)",
+  "
+**Gerudo's Card**",
+  "* Removed type **spirit** (was **0.5**)",
+  "
+**All 4 Skulltulas in Deku Tree**",
+  "* Added subtype **rang** with value **0.5**",
+  "* Removed subtype **jabu** (was **0.5**)",
+  "
+**Map & Compass in Jabu-Jabu**",
+  "* Changed type **jabu** from **3.75** to **2.5**",
+  "* Added type **rang** with value **2.75**",
+  "* Added type **zfadult** with value **2**",
+  "* Added type **zfboth** with value **-2**",
+  "* Added type **zfchild** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "* Removed type **incbarinade** (was **100**)",
+  "
+**7 Songs**",
+  "* Changed **time** from **6.5** to **6**",
+  "* Changed subtype **hearts3** from **0.75** to **1.5**",
+  "
+**5 Maps**",
+  "* Added type **incmap** with value **100**",
+  "* Removed type **incmc** (was **100**)",
+  "* Changed rowtype **bottle** from **0** to **0.5**",
+  "
+**Obtain 12 Different Heart Pieces**",
+  "* Added type **inchps** with value **100**",
+  "* Added type **zfadult** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "* Removed type **inchearts** (was **100**)",
+  "* Added subtype **inchearts** with value **100**",
+  "* Added subtype **zfboth** with value **-1**",
+  "* Added subtype **zfchild** with value **1**",
+  "
+**All 4 Lon Lon Ranch area Skulltulas**",
+  "* Added subtype **rang** with value **2.5**",
+  "* Removed subtype **jabu** (was **3.75**)",
+  "
+**All 4 Child Zora's Domain area Skulltulas**",
+  "* Added type **zfchild** with value **2**",
+  "* Removed type **childchu** (was **0**)",
+  "* Removed type **fountain** (was **2**)",
+  "* Added subtype **rang** with value **0.5**",
+  "* Removed subtype **jabu** (was **0.5**)",
+  "
+**Win Bombchu Bowling Prize**",
+  "* Changed **time** from **7** to **10**",
+  "* Changed type **bbprize** from **100** to **10**",
+  "* Changed subtype **child2** from **1** to **4.5**",
+  "
+**Forest Medallion**",
+  "* Removed type **incfboss** (was **100**)",
+  "* Removed type **inclacs** (was **100**)",
+  "
+**All 5 Skulltulas in Forest Temple**",
+  "* Removed subtype **incminuet** (was **100**)",
+  "
+**Defeat Dark Link**",
+  "* Changed subtype **bbprize** from **-6** to **-2**",
+  "
+**Longshot**",
+  "* Changed subtype **bbprize** from **-6** to **-2**",
+  "
+**Bronze Gauntlets**",
+  "* Added type **cuccorba** with value **100**",
+  "* Added type **incstrength** with value **100**",
+  "* Added type **shtrial** with value **2**",
+  "* Removed type **incshtrial** (was **100**)",
+  "* Changed subtype **bulletbag** from **100** to **-3**",
+  "* Added subtype **quiverrba** with value **-1**",
+  "* Removed subtype **bombbag** (was **100**)",
+  "
+**Open the Final Door of Fire Trial**",
+  "* Changed rowtype **bottle** from **0** to **1**",
+  "
+**4 Compasses**",
+  "* Added type **inccompass** with value **100**",
+  "* Removed type **incmc** (was **100**)",
+  "
+**6 Hearts**",
+  "* Changed rowtype **ms** from **2** to **1.75**",
+  "
+**All 8 Kakariko area Skulltulas**",
+  "* Added subtype **rang** with value **0.5**",
+  "* Removed subtype **jabu** (was **0.5**)",
+  "
+**Epona's Song**",
+  "* Added subtype **songs10** with value **3**",
+  "* Removed subtype **poachers** (was **-100**)",
+  "
+**7 Magic Beans**",
+  "* Changed **time** from **6** to **7.25**",
+  "* Added type **botw** with value **0**",
+  "
+**37th Heart Piece (Child Fortress)**",
+  "* Added type **childchu** with value **0**",
+  "
+**Beat Dodongo's Cavern**",
+  "* Changed **time** from **5.75** to **4.25**",
+  "* Added type **endon** with value **-1**",
+  "
+**Defeat Big Octo**",
+  "* Added type **zfadult** with value **2**",
+  "* Added type **zfboth** with value **-2**",
+  "* Added type **zfchild** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "* Added subtype **rang** with value **0.75**",
+  "
+**Boomerang**",
+  "* Changed type **jabu** from **3.75** to **1.5**",
+  "* Added type **rang** with value **2.75**",
+  "* Added type **zfadult** with value **2**",
+  "* Added type **zfboth** with value **-2**",
+  "* Added type **zfchild** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "* Removed type **incbarinade** (was **100**)",
+  "
+**4 Unused Keys in Forest Temple**",
+  "* Removed type **incforest** (was **100**)",
+  "* Removed subtype **incminuet** (was **100**)",
+  "
+**Beat the Water Temple**",
+  "* Added type **morpha** with value **5**",
+  "* Changed type **water** from **7** to **2**",
+  "* Changed rowtype **bottle** from **0** to **100**",
+  "
+**Beat the Shadow Temple**",
+  "* Added type **bongo** with value **3.5**",
+  "* Removed type **shadow** (was **3.5**)",
+  "
+**500 Rupees**",
+  "* Added type **cuccorba** with value **1**",
+  "* Changed type **skulls** from **100** to **4**",
+  "* Changed subtype **bulletbag** from **100** to **-3**",
+  "* Changed subtype **childchu** from **-2.5** to **-1**",
+  "* Added subtype **goldrupee** with value **0.5**",
+  "* Removed subtype **botw** (was **-1**)",
+  "
+**Stone of Agony**",
+  "* Added type **skulls** with value **6**",
+  "* Removed type **incskulls** (was **100**)",
+  "
+**3 Lake Hylia Skulltulas**",
+  "* Added type **zfchild** with value **2**",
+  "* Added subtype **childreset** with value **1.25**",
+  "
+**Beat the Forest Temple**",
+  "* Removed subtype **incminuet** (was **100**)",
+  "* Changed rowtype **bottle** from **0.5** to **100**",
+  "
+**Water Temple Boss Key**",
+  "* Removed subtype **incarrows** (was **100**)",
+  "
+**Water Medallion**",
+  "* Added type **morpha** with value **4.5**",
+  "* Changed type **water** from **6.5** to **2**",
+  "* Removed type **inclacs** (was **100**)",
+  "
+**Golden Gauntlets**",
+  "* Added type **incstrength** with value **100**",
+  "* Added type **shtrial** with value **2**",
+  "* Removed type **incshtrial** (was **100**)",
+  "* Removed subtype **bombbag** (was **100**)",
+  "
+**2 Boss Keys**",
+  "* Added subtype **claimcheck** with value **1**",
+  "* Changed rowtype **bottle** from **0.5** to **100**",
+  "
+**Clear 4 Silver Rupee Rooms**",
+  "* Added type **zfadult** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "* Added subtype **zfboth** with value **-1**",
+  "* Added subtype **zfchild** with value **1**",
+  "
+**Fill all 4 Bottle Slots**",
+  "* Added subtype **zfchild** with value **1.5**",
+  "* Removed subtype **jabu** (was **1.5**)",
+  "
+**Bullet Bag (40)**",
+  "* Added subtype **sling** with value **0.5**",
+  "* Removed subtype **strength** (was **-1**)",
+  "
+**All 3 Skulltulas in Ice Cavern**",
+  "* Added type **zfadult** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "* Added subtype **zfboth** with value **-1**",
+  "* Added subtype **zfchild** with value **1**",
+  "
+**Map & Compass in Ice Cavern**",
+  "* Added type **zfadult** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "* Added subtype **zfboth** with value **-1**",
+  "* Added subtype **zfchild** with value **1**",
+  "
+**Iron Boots**",
+  "* Added type **zfadult** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "* Removed type **incboot** (was **100**)",
+  "* Removed type **incirons** (was **100**)",
+  "* Added subtype **zfboth** with value **-1**",
+  "* Added subtype **zfchild** with value **1**",
+  "
+**Defeat a White Wolfos**",
+  "* Added type **zfadult** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "* Added subtype **zfboth** with value **-1**",
+  "* Added subtype **zfchild** with value **1**",
+  "
+**All 4 Skulltulas in Jabu-Jabu**",
+  "* Changed type **jabu** from **2** to **1.5**",
+  "* Added type **zfadult** with value **2**",
+  "* Added type **zfboth** with value **-2**",
+  "* Added type **zfchild** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "* Added subtype **rang** with value **0.5**",
+  "
+**Defeat Phantom Ganon**",
+  "* Removed subtype **incminuet** (was **100**)",
+  "
+**Defeat Morpha**",
+  "* Added type **morpha** with value **2.5**",
+  "* Changed type **water** from **4.5** to **2**",
+  "
+**Defeat Bongo-Bongo**",
+  "* Added type **bongo** with value **2.25**",
+  "* Removed type **shadow** (was **2.25**)",
+  "
+**3 Songs**",
+  "* Added subtype **bothzl** with value **-1.25**",
+  "* Changed subtype **czl** from **1** to **1.25**",
+  "* Changed subtype **saria** from **1.75** to **1.5**",
+  "
+**4 Songs**",
+  "* Added subtype **bothzl** with value **-1.5**",
+  "* Changed subtype **czl** from **1** to **1.5**",
+  "
+**Giant's Wallet**",
+  "* Added type **cuccorba** with value **1**",
+  "* Changed type **skulls** from **100** to **4**",
+  "* Removed type **incbeans** (was **100**)",
+  "* Changed subtype **bulletbag** from **100** to **-3**",
+  "* Changed subtype **childchu** from **-2.5** to **-1**",
+  "* Removed subtype **botw** (was **-1**)",
+  "
+**4 Maps**",
+  "* Added type **incmap** with value **100**",
+  "* Removed type **incmc** (was **100**)",
+  "
+**Blue Potion**",
+  "* Changed **time** from **3.75** to **3**",
+  "* Changed type **poachers** from **3.5** to **2.5**",
+  "* Added subtype **cuccorba** with value **0.25**",
+  "
+**Blue Fire**",
+  "* Added type **zfadult** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "* Added subtype **zfboth** with value **-1**",
+  "* Added subtype **zfchild** with value **1**",
+  "
+**Cow in House**",
+  "* Added subtype **fortress** with value **0.75**",
+  "
+**Ruto's Letter**",
+  "* Added type **zfchild** with value **2**",
+  "* Removed type **inclhskull** (was **2**)",
+  "* Removed subtype **jabu** (was **1.5**)",
+  "
+**All 4 Adult Zora's Domain area Skulltulas**",
+  "* Added type **zfadult** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "* Added subtype **strength** with value **0.5**",
+  "
+**Ice Cavern HP**",
+  "* Added type **zfadult** with value **2**",
+  "* Removed type **fountain** (was **2**)",
+  "* Added subtype **zfboth** with value **-1**",
+  "* Added subtype **zfchild** with value **1**",
+  "
+**Fairy Slingshot**",
+  "* Added type **sling** with value **3**",
+  "* Removed subtype **bulletbag** (was **0.5**)",
+  "
+**Defeat King Dodongo**",
+  "* Changed **time** from **4** to **3**",
+  "* Added type **endon** with value **-0.5**",
+  "
+**Open 3 Gold Rupee Chests**",
+  "* Removed type **botw** (was **0**)",
+  "* Removed subtype **ganonchu** (was **-0.5**)",
+  "
+**3 Swords & 3 Tunics**",
+  "* Changed type **gtunic** from **1** to **1.25**",
+  "* Changed type **swords** from **3** to **1.5**",
+  "* Added type **zfadult** with value **1.5**",
+  "* Removed type **fountain** (was **1.5**)",
+  "* Added subtype **cuccorba** with value **1**",
+  "
+**Silver Scale**",
+  "* Added type **cuccorba** with value **-3**",
+  "* Added type **zfchild** with value **2**",
+  "* Removed type **inclhskull** (was **2**)",
+  "* Removed subtype **strength** (was **100**)",
+  "
+**Fire Temple Boss Key**",
+  "* Removed type **incfirebk** (was **100**)",
+  "
+**3 Tunics**",
+  "* Changed type **gtunic** from **1** to **1.25**",
+  "* Added type **zfadult** with value **1.5**",
+  "* Removed type **fountain** (was **1.5**)",
+  "
+**5 Magic Beans**",
+  "* Changed **time** from **2.25** to **4.5**",
+  "
+**Goron Tunic**",
+  "* Changed type **gtunic** from **1** to **1.25**",
+  "* Removed type **inctunic** (was **100**)",
+  "* Added subtype **dmc** with value **0.25**",
+  "* Added subtype **inctunic** with value **100**",
+  "
+**Zora Tunic**",
+  "* Added type **zfadult** with value **1.5**",
+  "* Removed type **fountain** (was **1.5**)",
+  "* Removed type **inctunic** (was **100**)",
+  "* Added subtype **inctunic** with value **100**",
+  "
+**Exactly 30 Deku Sticks**",
+  "* Added type **incsticks** with value **100**",
+  "* Removed type **sticks** (was **100**)",
+  "* Changed subtype **bulletbag** from **100** to **-3**",
+  "
+**Quiver (40)**",
+  "* Added type **quiverrba** with value **100**",
+  "* Removed type **bombbag** (was **100**)",
+  "
+**Minuet of Forest**",
+  "* Changed **time** from **1.75** to **1.5**",
+  "* Removed type **incforest** (was **100**)",
+  "* Removed type **incminuet** (was **100**)",
+  "
+**Bolero of Fire**",
+  "* Changed **time** from **1.5** to **1.25**",
+  "
+**Giant's Knife**",
+  "* Changed type **swords** from **3** to **1**",
+  "* Added subtype **cuccorba** with value **1**",
+  "
+**Bomb Bag (30)**",
+  "* Removed type **bombbag** (was **100**)",
+  "* Added subtype **quiverrba** with value **-3**",
+  "* Removed subtype **bbprize** (was **100**)",
+  "
+**Exactly 20 Deku Sticks**",
+  "* Added type **incsticks** with value **100**",
+  "* Removed type **sticks** (was **100**)",
+  "
+**Bullet Bag (50)**",
+  "* Added subtype **sling** with value **-1**",
+  "* Removed subtype **strength** (was **-1**)",
+]
+`;
