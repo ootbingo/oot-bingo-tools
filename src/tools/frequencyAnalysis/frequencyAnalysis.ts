@@ -3,26 +3,28 @@ import { BingoList } from "oot-bingo-generator/build/types/goalList";
 import { Mode, Profile } from "oot-bingo-generator/build/types/settings";
 
 export async function analyzeFrequencies(
-  numberOfBoards: number,
   bingoList: BingoList,
-  mode: Mode,
-  startSeed?: number,
+  numberOfBoards: number,
+  mode: Mode = "normal",
+  startSeed: number = 0,
+  numberOfWorkers: number = 8,
   profile?: Profile,
 ) {
-  startSeed = startSeed ?? 0;
-  const maxIterations = 100;
-
   const frequencies: { [key: string]: number } = {};
 
   console.log(
-    `Analyzing goal frequency of ${numberOfBoards} boards, starting at seed ${startSeed}...`,
+    `Analyzing goal frequency of ${numberOfBoards} boards, with mode ${mode}, starting from seed ${startSeed}...`,
   );
 
-  // todoo number of workers
-  const boardResults = await generateBoards(numberOfBoards, 16, bingoList);
-  const boards = boardResults.map((result) => result.board);
-  const allIterations = boards.map((board) => board.iterations);
-  const numberOfSuccessBoards = boards.length;
+  const { results, meta } = await generateBoards(
+    bingoList,
+    numberOfBoards,
+    mode,
+    startSeed,
+    numberOfWorkers,
+    profile,
+  );
+  const boards = results.map((result) => result.board);
 
   for (const board of boards) {
     for (const goal of board.goals) {
@@ -33,25 +35,7 @@ export async function analyzeFrequencies(
     }
   }
 
-  console.log(`Finished (processed ${numberOfSuccessBoards} boards total)\n`);
-  return {
-    frequencies: frequencies,
-    meta: {
-      iterations: {
-        max: Math.max(...allIterations),
-        average:
-          allIterations.length > 0
-            ? allIterations.reduce((total, currentValue) => total + currentValue, 0) /
-              allIterations.length
-            : NaN,
-      },
-      attempts: {
-        successes: numberOfSuccessBoards,
-        fails: numberOfBoards - numberOfSuccessBoards,
-        total: numberOfBoards,
-      },
-    },
-  };
+  return { frequencies, meta };
 }
 
 export function printFrequencies(

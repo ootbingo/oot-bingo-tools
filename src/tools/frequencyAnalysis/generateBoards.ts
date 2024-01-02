@@ -2,81 +2,115 @@ import { Worker } from "worker_threads";
 import path from "node:path";
 import { BingoList } from "oot-bingo-generator/build/types/goalList";
 import { BingoBoard } from "oot-bingo-generator/build/bingoBoard";
+import { Mode, Profile } from "oot-bingo-generator/build/types/settings";
+import { MAX_ITERATIONS } from "oot-bingo-generator/build/constants/board";
+import { average } from "../../util/arrayUtils";
+import { SquareWithGoal } from "oot-bingo-generator/build/types/board";
+import { roundToDecimals } from "../../util/numberUtils";
+
+interface WorkerResult {
+  seed: number;
+  // Workers just return the object, not the class instance
+  board: { _squares: SquareWithGoal[]; _iterations: number } | undefined;
+}
 
 interface GenerationResult {
   seed: number;
-  board: { _squares: any[]; _iterations: number } | undefined;
+  iterations: number;
+  board: BingoBoard;
 }
 
 interface BoardResult {
   seed: number;
+  iterations: number;
   board: BingoBoard;
 }
 
+interface Meta {
+  iterations: { max: number; average: number };
+  attempts: { successes: number; fails: number; total: number };
+}
+
 export function generateBoards(
-  numberOfBoards = 1000,
-  numberOfWorkers = 4,
   bingoList: BingoList,
-): Promise<BoardResult[]> {
+  numberOfBoards: number,
+  mode: Mode,
+  startSeed: number,
+  numberOfWorkers: number,
+  profile?: Profile,
+): Promise<{ results: BoardResult[]; meta: Meta }> {
   const startTime = performance.now();
 
-  return new Promise<BoardResult[]>((resolve) => {
+  return new Promise<{ results: BoardResult[]; meta: Meta }>((resolve) => {
     const workers = createWorkers(
       numberOfWorkers,
-      { bingoList: bingoList },
-      (message: GenerationResult, workerIndex: number) =>
-        handleResult(message, workerIndex),
+      { bingoList, mode, profile },
+      (message: WorkerResult, workerIndex: number) => handleResult(message, workerIndex),
     );
 
-    let workload = 0;
-    const workloadMax = numberOfBoards;
+    let currentSeed = startSeed;
+    const maxSeed = startSeed + numberOfBoards;
 
     const results: GenerationResult[] = [];
 
-    workers.forEach((worker) => worker.postMessage({ seed: workload++ }));
+    workers.forEach((worker) => worker.postMessage({ seed: currentSeed++ }));
 
-    const handleResult = (message: GenerationResult, workerIndex: number) => {
-      results.push(message);
+    const handleResult = (message: WorkerResult, workerIndex: number) => {
+      const generationResult: GenerationResult = {
+        ...message,
+        iterations: message.board ? message.board._iterations : MAX_ITERATIONS,
+        board: message.board
+          ? new BingoBoard(message.board._squares, message.board._iterations)
+          : undefined,
+      };
+      results.push(generationResult);
 
-      if (workload < workloadMax) {
-        workers[workerIndex].postMessage({ seed: workload++ });
+      if (currentSeed < maxSeed) {
+        workers[workerIndex].postMessage({ seed: currentSeed++, mode, profile });
       }
 
-      if (results.length >= workloadMax) {
-        stopWorkers(workers);
-
-        if (results.length < numberOfBoards) {
-          console.log(
-            `${numberOfBoards - results.length} boards failed to generate, using ${
-              results.length
-            } for this balance step`,
-          );
-        }
-
-        const successResults = results
-          .sort((a, b) => a.seed - b.seed)
-          .map((result): BoardResult | undefined => {
-            return (
-              result.board && {
-                seed: result.seed,
-                board: result.board
-                  ? new BingoBoard(result.board._squares, result.board._iterations)
-                  : undefined,
-              }
-            );
-          })
-          .filter((result) => !!result.board);
-
-        const boards = successResults.map((result) => result.board);
-        const allIterations: number[] = boards.map((board) => board.iterations);
-        const executionTime = performance.now() - startTime;
-        console.log(
-          `Generated ${successResults.length} boards in ${(executionTime / 1000).toFixed(
-            3,
-          )}s (average iterations = ${average(allIterations)})`,
-        );
-        resolve(successResults);
+      if (results.length % 1000 === 0 && results.length > 0) {
+        console.log(`Generating... (currently at ${results.length} boards)`);
       }
+
+      if (results.length >= numberOfBoards) {
+        onDone();
+      }
+    };
+
+    const onDone = () => {
+      stopWorkers(workers);
+
+      const successResults = results
+        .sort((a, b) => a.seed - b.seed)
+        .filter((result): result is BoardResult => !!result.board);
+
+      const allIterations: number[] = results.map((result) => result.iterations);
+
+      const meta = {
+        iterations: {
+          max: Math.max(...allIterations),
+          average: average(allIterations),
+        },
+        attempts: {
+          successes: successResults.length,
+          fails: results.length - successResults.length,
+          total: results.length,
+        },
+      };
+
+      const executionTime = performance.now() - startTime;
+      console.log(
+        `Generated ${meta.attempts.successes} boards in ${roundToDecimals(
+          executionTime / 1000,
+          3,
+        )}s (average iterations = ${meta.iterations.average}${
+          meta.attempts.fails > 0
+            ? ` (including ${meta.attempts.fails} failed boards)`
+            : ""
+        })`,
+      );
+      resolve({ results: successResults, meta });
     };
   });
 }
@@ -101,9 +135,4 @@ function createWorkers<TWorkerData, TMessage>(
 
 function stopWorkers(workers: Worker[]): void {
   workers.forEach((worker) => worker.terminate());
-}
-
-function average(numbers: number[]) {
-  const sum = numbers.reduce((a, b) => a + b, 0);
-  return sum / numbers.length;
 }
