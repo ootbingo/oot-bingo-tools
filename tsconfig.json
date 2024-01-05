@@ -2,13 +2,15 @@
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
+    "declaration": true,
     "allowJs": true,
     "sourceMap": false,
     "moduleResolution": "node",
     "outDir": "build",
     "rootDir": "src",
     "resolveJsonModule": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "removeComments": true,
   },
   "include": [
     "src"

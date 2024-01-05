@@ -10,8 +10,10 @@
   "scripts": {
     "start": "ts-node src/sandbox/main.ts",
     "test": "jest",
+    "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "lint": "eslint tsconfig.json"
+    "lint": "eslint tsconfig.json",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
