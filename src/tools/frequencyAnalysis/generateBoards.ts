@@ -4,31 +4,13 @@ import { BingoList } from "oot-bingo-generator/build/types/goalList";
 import { BingoBoard } from "oot-bingo-generator/build/bingoBoard";
 import { Mode, Profile } from "oot-bingo-generator/build/types/settings";
 import { MAX_ITERATIONS } from "oot-bingo-generator/build/constants/board";
+import {
+  BoardResult,
+  GeneratedBoardsMeta,
+  GenerationResult,
+  WorkerResult,
+} from "./types/frequencyAnalysisTypes";
 import { average, roundToDecimals } from "../../util/utils";
-import { SquareWithGoal } from "oot-bingo-generator/build/types/board";
-
-interface WorkerResult {
-  seed: number;
-  // Workers just return the object, not the class instance
-  board: { _squares: SquareWithGoal[]; _iterations: number } | undefined;
-}
-
-interface GenerationResult {
-  seed: number;
-  iterations: number;
-  board: BingoBoard;
-}
-
-interface BoardResult {
-  seed: number;
-  iterations: number;
-  board: BingoBoard;
-}
-
-interface Meta {
-  iterations: { max: number; average: number };
-  attempts: { successes: number; fails: number; total: number };
-}
 
 // Log progress after x board generations
 const logFrequency = 500;
@@ -40,10 +22,10 @@ export function generateBoards(
   startSeed: number,
   numberOfWorkers: number,
   profile?: Profile,
-): Promise<{ results: BoardResult[]; meta: Meta }> {
+): Promise<{ results: BoardResult[]; meta: GeneratedBoardsMeta }> {
   const startTime = performance.now();
 
-  return new Promise<{ results: BoardResult[]; meta: Meta }>((resolve) => {
+  return new Promise<{ results: BoardResult[]; meta: GeneratedBoardsMeta }>((resolve) => {
     const workers = createWorkers(
       numberOfWorkers,
       { bingoList, mode, profile },

@@ -1,8 +1,9 @@
-import { generateBoards } from "./generateBoards";
 import { BingoList } from "oot-bingo-generator/build/types/goalList";
 import { Mode, Profile } from "oot-bingo-generator/build/types/settings";
+import { generateBoards } from "./generateBoards";
 import { sortObject } from "../../util/utils";
 
+// todo doc
 export async function analyzeFrequencies(
   bingoList: BingoList,
   numberOfBoards: number,
@@ -41,6 +42,7 @@ export async function analyzeFrequencies(
   return { frequencies: sortedFrequencies, meta };
 }
 
+// todo doc
 export function printFrequencies(
   frequenciesResult: Awaited<ReturnType<typeof analyzeFrequencies>>,
 ) {
