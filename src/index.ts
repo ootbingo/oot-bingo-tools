@@ -3,7 +3,10 @@ export {
   analyzeFrequencies,
   printFrequencies,
 } from "./tools/frequencyAnalysis/frequencyAnalysis";
-export { GeneratedBoardsMeta } from "./tools/frequencyAnalysis/types/frequencyAnalysisTypes";
+export {
+  FrequencyAnalysisResult,
+  GeneratedBoardsMeta,
+} from "./tools/frequencyAnalysis/types/frequencyAnalysisTypes";
 
 // Changelog
 export { getChangeLog, printChangeLogs } from "./tools/changeLog/getChangeLog";

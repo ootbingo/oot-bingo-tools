@@ -2,8 +2,21 @@ import { BingoList } from "oot-bingo-generator/build/types/goalList";
 import { Mode, Profile } from "oot-bingo-generator/build/types/settings";
 import { generateBoards } from "./generateBoards";
 import { sortObject } from "../../util/utils";
+import { FrequencyAnalysisResult } from "./types/frequencyAnalysisTypes";
 
-// todo doc
+/**
+ * Performs an analysis of how frequent each goal is in a certain Bingo version.
+ * It does so by generating a certain amount of boards, and then counts on how many boards each goal appears.
+ * The generation of the boards is performed in parallel.
+ * Note that this is an async function that should be awaited to use the results.
+ * @param bingoList Goal list of a bingo version
+ * @param numberOfBoards Amount of boards to generate; the more, the more accurate the results
+ * @param [mode] Bingo mode ('normal', 'short', 'blackout', or 'shortBlackout')
+ * @param [startSeed] The first seed it starts generating boards with. E.g. if this value is 150, and numberOfBoards is 1000,
+ * it will generate boards from seed 150 to 1049. Defaults to 0.
+ * @param [numberOfWorkers] The amount of worker threads to create for parallel task execution. Optimal value may depend on your hardware. Defaults to 8.
+ * @param [profile] The profile that the generator should use.
+ */
 export async function analyzeFrequencies(
   bingoList: BingoList,
   numberOfBoards: number,
@@ -11,7 +24,7 @@ export async function analyzeFrequencies(
   startSeed: number = 0,
   numberOfWorkers: number = 8,
   profile?: Profile,
-) {
+): Promise<FrequencyAnalysisResult> {
   const frequencies: { [key: string]: number } = {};
 
   console.log(
@@ -42,9 +55,13 @@ export async function analyzeFrequencies(
   return { frequencies: sortedFrequencies, meta };
 }
 
-// todo doc
+/**
+ * Pretty prints a frequency analysis result object
+ * @param frequenciesResult Object containing frequencies and board generation meta information.
+ * Can be obtained by running the analyzeFrequencies function.
+ */
 export function printFrequencies(
-  frequenciesResult: Awaited<ReturnType<typeof analyzeFrequencies>>,
+  frequenciesResult: FrequencyAnalysisResult
 ) {
   const { frequencies, meta } = frequenciesResult;
   const sortedGoalNames = Object.keys(frequencies).sort(function (a, b) {

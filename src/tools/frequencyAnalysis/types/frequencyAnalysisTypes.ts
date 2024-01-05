@@ -23,3 +23,8 @@ export interface GeneratedBoardsMeta {
   iterations: { max: number; average: number };
   attempts: { successes: number; fails: number; total: number };
 }
+
+export interface FrequencyAnalysisResult {
+  frequencies: { [key: string]: number },
+  meta: GeneratedBoardsMeta,
+}
