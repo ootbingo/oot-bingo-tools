@@ -15,6 +15,15 @@ import { average, roundToDecimals } from "../../utils/utils";
 // Log progress after x board generations
 const logFrequency = 500;
 
+/**
+ * @internal
+ * @param bingoList
+ * @param numberOfBoards
+ * @param mode
+ * @param startSeed
+ * @param numberOfWorkers
+ * @param profile
+ */
 export function generateBoards(
   bingoList: BingoList,
   numberOfBoards: number,
