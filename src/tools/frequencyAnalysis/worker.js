@@ -1,4 +1,4 @@
-const { parentPort, workerData } = require("worker_threads");
+const { parentPort, workerData } = require("node:worker_threads");
 const { generateBingoBoard } = require("oot-bingo-generator");
 
 const handleMessage = (message) => {
