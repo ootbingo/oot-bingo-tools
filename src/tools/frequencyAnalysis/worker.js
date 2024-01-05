@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const { parentPort, workerData } = require("worker_threads");
 const { generateBingoBoard } = require("oot-bingo-generator");
 

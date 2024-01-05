@@ -69,8 +69,12 @@ export function generateBoards(
         workers[workerIndex].postMessage({ seed: currentSeed++, mode, profile });
       }
 
-      if (results.length % 1000 === 0 && results.length > 0) {
-        console.log(`Generating... (currently at ${results.length} boards)`);
+      if (
+        results.length % 500 === 0 &&
+        results.length > 0 &&
+        results.length < numberOfBoards
+      ) {
+        console.log(`Generating... (processed ${results.length} boards)`);
       }
 
       if (results.length >= numberOfBoards) {
@@ -90,7 +94,7 @@ export function generateBoards(
       const meta = {
         iterations: {
           max: Math.max(...allIterations),
-          average: average(allIterations),
+          average: roundToDecimals(average(allIterations), 3),
         },
         attempts: {
           successes: successResults.length,
@@ -99,10 +103,10 @@ export function generateBoards(
         },
       };
 
-      const executionTime = performance.now() - startTime;
+      const executionTimeInMs = performance.now() - startTime;
       console.log(
-        `Generated ${meta.attempts.successes} boards in ${roundToDecimals(
-          executionTime / 1000,
+        `Finished, generated ${meta.attempts.successes} boards in ${roundToDecimals(
+          executionTimeInMs / 1000,
           3,
         )}s (average iterations = ${meta.iterations.average}${
           meta.attempts.fails > 0

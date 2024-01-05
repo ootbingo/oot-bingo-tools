@@ -1,6 +1,7 @@
 import { generateBoards } from "./generateBoards";
 import { BingoList } from "oot-bingo-generator/build/types/goalList";
 import { Mode, Profile } from "oot-bingo-generator/build/types/settings";
+import { sortObject } from "../../util/objectUtils";
 
 export async function analyzeFrequencies(
   bingoList: BingoList,
@@ -35,7 +36,9 @@ export async function analyzeFrequencies(
     }
   }
 
-  return { frequencies, meta };
+  const sortedFrequencies = sortObject(frequencies, (a, b) => b.value - a.value);
+
+  return { frequencies: sortedFrequencies, meta };
 }
 
 export function printFrequencies(

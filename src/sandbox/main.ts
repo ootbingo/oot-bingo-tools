@@ -15,7 +15,7 @@ async function main() {
   // Generate a board
   const board = generateBingoBoard(exampleBingoList, "normal", 112233);
   console.log(
-    `Generated after ${board?.iterations} iteration(s): ${board?.goalNames.join(", ")}`,
+    `Generated after ${board?.iterations} iteration(s): ${board?.goalNames.join(", ")}\n`,
   );
 
   // Frequency analysis of a bingo version
