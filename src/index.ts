@@ -9,4 +9,4 @@ export {
 } from "./tools/frequencyAnalysis/types/frequencyAnalysisTypes";
 
 // Changelog
-export { getChangeLog, printChangeLogs } from "./tools/changeLog/getChangeLog";
+export { getChangeLog, printChangeLog } from "./tools/changeLog/getChangeLog";
