@@ -1,6 +1,9 @@
-// Functions
-export { analyzeFrequencies } from "./tools/frequencyAnalysis/frequencyAnalysis";
-export { getChangeLog } from "./tools/changeLog/getChangeLog";
-
-// Types
+// Frequency Analysis
+export {
+  analyzeFrequencies,
+  printFrequencies,
+} from "./tools/frequencyAnalysis/frequencyAnalysis";
 export { GeneratedBoardsMeta } from "./tools/frequencyAnalysis/types/frequencyAnalysisTypes";
+
+// Changelog
+export { getChangeLog, printChangeLogs } from "./tools/changeLog/getChangeLog";

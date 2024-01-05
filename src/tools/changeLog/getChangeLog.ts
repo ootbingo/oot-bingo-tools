@@ -1,7 +1,8 @@
 import { Goal, GoalList } from "oot-bingo-generator/build/types/goalList";
+import { capitalizeFirstLetter } from "../../util/utils";
 
 /**
- * Print the changes between two Bingo goal lists.
+ * Prints the changes between two Bingo goal lists.
  * Example usage: printChangeLog(getBingoList("v10.1").normal, getBingoList("v10.2").normal);
  *
  * @param goalList1 Goal list of the old version (normal or short list, not combined)
@@ -47,7 +48,9 @@ export function getChangeLog(goalList1: GoalList, goalList2: GoalList): string[]
   for (const goal1 of goals1) {
     const goal2 = goals2.find((goal2) => goal2.id === goal1.id);
     if (goal2) {
-      goalsChangedLogs = goalsChangedLogs.concat(getChangedPropsOfGoalsLogs(goal1, goal2));
+      goalsChangedLogs = goalsChangedLogs.concat(
+        getChangedPropsOfGoalsLogs(goal1, goal2),
+      );
     }
   }
   if (goalsChangedLogs.length > 0) {
@@ -83,7 +86,10 @@ function getChangedPropsOfGoalsLogs(goal1: Goal, goal2: Goal): string[] {
   return logs;
 }
 
-function getChangedPropsOfGoalListsLogs(goalList1: GoalList, goalList2: GoalList): string[] {
+function getChangedPropsOfGoalListsLogs(
+  goalList1: GoalList,
+  goalList2: GoalList,
+): string[] {
   const logs: string[] = [];
 
   for (const goalListPropType of ["synfilters", "rowtypes"]) {
@@ -142,6 +148,8 @@ function getFlatGoals(goalList: GoalList): Goal[] {
   return flatGoals.sort((a, b) => b.difficulty - a.difficulty);
 }
 
-function capitalizeFirstLetter(string): string {
-  return string.charAt(0).toUpperCase() + string.slice(1);
+export function printChangeLogs(logs: string[]) {
+  for (const log of logs) {
+    console.log(log);
+  }
 }

@@ -28,6 +28,14 @@ export function roundToDecimals(number: number, decimals: number = 3): number {
 }
 
 /**
+ * Capitalizes the first letter of a string
+ * @param string
+ */
+export function capitalizeFirstLetter(string: string): string {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+/**
  * Sorts the entries of a key/value object.
  * Note that the order of an object is never actually guaranteed,
  * but this should work for all cases where you use for...in loops, or call Object.keys(), Object.values(), or Object.entries().

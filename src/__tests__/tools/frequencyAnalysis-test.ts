@@ -625,7 +625,7 @@ describe("frequencyAnalysis", () => {
       expect(consoleSpy).toHaveBeenNthCalledWith(
         3,
         expect.stringMatching(
-          /Finished, generated 1000 boards in [0-9]+(\.[0-9]+)?s \(average iterations = 4\.513\)/,
+          /Finished, generated 1000 boards in [0-9]+(\.[0-9]+)?s \(average iterations = 4\.513\)\n/,
         ),
       );
     },
@@ -638,7 +638,7 @@ describe("frequencyAnalysis", () => {
       2,
       "normal",
       123456,
-      16,
+      1,
       // impossible to generate
       {
         ...standardProfile,
@@ -654,7 +654,7 @@ describe("frequencyAnalysis", () => {
     expect(consoleSpy).toHaveBeenNthCalledWith(
       2,
       expect.stringMatching(
-        /Finished, generated 0 boards in [0-9]+(\.[0-9]+)?s \(average iterations = 100 \(including 2 failed boards\)\)/,
+        /Finished, generated 0 boards in [0-9]+(\.[0-9]+)?s \(average iterations = 100 \(including 2 failed boards\)\)\n/,
       ),
     );
     expect(frequencyResult.meta).toEqual({

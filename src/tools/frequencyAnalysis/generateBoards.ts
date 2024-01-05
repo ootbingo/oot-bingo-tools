@@ -96,7 +96,7 @@ export function generateBoards(
           meta.attempts.fails > 0
             ? ` (including ${meta.attempts.fails} failed boards)`
             : ""
-        })`,
+        })\n`,
       );
       resolve({ results: successResults, meta });
     };
