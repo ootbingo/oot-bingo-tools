@@ -3,7 +3,7 @@ import {
   analyzeFrequencies,
   printFrequencies,
 } from "../tools/frequencyAnalysis/frequencyAnalysis";
-import { getChangeLog, printChangeLogs } from "../tools/changeLog/getChangeLog";
+import { getChangeLog, printChangeLog } from "../tools/changeLog/getChangeLog";
 import { generateBingoBoard } from "oot-bingo-generator";
 import { exampleBingoList } from "./exampleBingoList";
 import { DEFAULT_PROFILES } from "oot-bingo-generator/build/constants/profiles";
@@ -34,7 +34,7 @@ async function main() {
     getBingoList("v10.3.1").normal,
     getBingoList("v10.3.2").normal,
   );
-  printChangeLogs(logs);
+  printChangeLog(logs);
 }
 
 main().then();

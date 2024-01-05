@@ -60,9 +60,7 @@ export async function analyzeFrequencies(
  * @param frequenciesResult Object containing frequencies and board generation meta information.
  * Can be obtained by running the analyzeFrequencies function.
  */
-export function printFrequencies(
-  frequenciesResult: FrequencyAnalysisResult
-) {
+export function printFrequencies(frequenciesResult: FrequencyAnalysisResult) {
   const { frequencies, meta } = frequenciesResult;
   const sortedGoalNames = Object.keys(frequencies).sort(function (a, b) {
     return frequencies[b] - frequencies[a];
