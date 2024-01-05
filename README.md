@@ -2,6 +2,7 @@
 
 ![image](https://img.shields.io/npm/v/oot-bingo-tools)
 
+
 A library of functions to be used in combination with
 the [oot-bingo-generator](https://github.com/ootbingo/oot-bingo-generator)
 and [oot-bingo-lists](https://github.com/ootbingo/oot-bingo-lists) packages. It includes tools to analyze frequencies of
@@ -13,7 +14,7 @@ goals, and differences between goal lists.
 npm install --save oot-bingo-tools
 ```
 
-## Tools
+## Usage
 
 ### Frequency analysis
 

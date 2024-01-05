@@ -1,8 +1,10 @@
 {
   "name": "oot-bingo-tools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tools to work with the OoT Bingo generator, including analyzing rows, synergies, and frequencies",
-  "main": "build/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
   "types": "build/index.d.ts",
   "files": [
     "build/**/*"

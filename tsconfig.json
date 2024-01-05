@@ -10,7 +10,7 @@
     "rootDir": "src",
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "removeComments": true,
+    "removeComments": false,
   },
   "include": [
     "src"
