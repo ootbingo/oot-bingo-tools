@@ -30,6 +30,9 @@ interface Meta {
   attempts: { successes: number; fails: number; total: number };
 }
 
+// Log progress after x board generations
+const logFrequency = 500;
+
 export function generateBoards(
   bingoList: BingoList,
   numberOfBoards: number,
@@ -69,7 +72,7 @@ export function generateBoards(
       }
 
       if (
-        results.length % 500 === 0 &&
+        results.length % logFrequency === 0 &&
         results.length > 0 &&
         results.length < numberOfBoards
       ) {
