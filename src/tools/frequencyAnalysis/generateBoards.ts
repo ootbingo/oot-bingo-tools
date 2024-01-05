@@ -4,9 +4,8 @@ import { BingoList } from "oot-bingo-generator/build/types/goalList";
 import { BingoBoard } from "oot-bingo-generator/build/bingoBoard";
 import { Mode, Profile } from "oot-bingo-generator/build/types/settings";
 import { MAX_ITERATIONS } from "oot-bingo-generator/build/constants/board";
-import { average } from "../../util/arrayUtils";
+import { average, roundToDecimals } from "../../util/utils";
 import { SquareWithGoal } from "oot-bingo-generator/build/types/board";
-import { roundToDecimals } from "../../util/numberUtils";
 
 interface WorkerResult {
   seed: number;

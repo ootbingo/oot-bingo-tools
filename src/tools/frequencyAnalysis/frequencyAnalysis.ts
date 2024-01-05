@@ -1,7 +1,7 @@
 import { generateBoards } from "./generateBoards";
 import { BingoList } from "oot-bingo-generator/build/types/goalList";
 import { Mode, Profile } from "oot-bingo-generator/build/types/settings";
-import { sortObject } from "../../util/objectUtils";
+import { sortObject } from "../../util/utils";
 
 export async function analyzeFrequencies(
   bingoList: BingoList,

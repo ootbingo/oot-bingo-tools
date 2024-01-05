@@ -1,5 +1,34 @@
 /**
- * Sort the entries of a key/value object.
+ * Calculates the sum of an array of numbers
+ * @param numbers
+ */
+export function sum(numbers: number[]) {
+  return numbers.reduce((total, currentValue) => total + currentValue, 0);
+}
+
+/**
+ * Calculates the average of an array of numbers
+ * @param numbers
+ */
+export function average(numbers: number[]) {
+  return sum(numbers) / numbers.length;
+}
+
+/**
+ * Rounds a number to a certain amount of decimals
+ * @param number
+ * @param decimals Number of decimals that the number should be rounded to
+ */
+export function roundToDecimals(number: number, decimals: number = 3): number {
+  if (isNaN(number) || isNaN(decimals) || decimals < 0) {
+    return NaN;
+  }
+  const multiplier = 10 ** decimals;
+  return Math.round(number * multiplier) / multiplier;
+}
+
+/**
+ * Sorts the entries of a key/value object.
  * Note that the order of an object is never actually guaranteed,
  * but this should work for all cases where you use for...in loops, or call Object.keys(), Object.values(), or Object.entries().
  * @param object A key/value object
