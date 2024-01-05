@@ -1,7 +1,7 @@
 import { BingoList } from "oot-bingo-generator/build/types/goalList";
 import { Mode, Profile } from "oot-bingo-generator/build/types/settings";
 import { generateBoards } from "./generateBoards";
-import { sortObject } from "../../util/utils";
+import { sortObject } from "../../utils/utils";
 import { FrequencyAnalysisResult } from "./types/frequencyAnalysisTypes";
 
 /**
@@ -50,7 +50,10 @@ export async function analyzeFrequencies(
     }
   }
 
-  const sortedFrequencies = sortObject(frequencies, (a, b) => b.value - a.value);
+  const sortedFrequencies = sortObject(
+    frequencies,
+    (a, b) => b.value - a.value,
+  );
 
   return { frequencies: sortedFrequencies, meta };
 }

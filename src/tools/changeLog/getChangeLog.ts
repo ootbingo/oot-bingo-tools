@@ -1,5 +1,5 @@
 import { Goal, GoalList } from "oot-bingo-generator/build/types/goalList";
-import { capitalizeFirstLetter } from "../../util/utils";
+import { capitalizeFirstLetter } from "../../utils/utils";
 
 /**
  * Prints the changes between two Bingo goal lists.
@@ -9,7 +9,10 @@ import { capitalizeFirstLetter } from "../../util/utils";
  * @param goalList2 Goal list of the new version (normal or short list, not combined)
  * @returns Array with all the logs
  */
-export function getChangeLog(goalList1: GoalList, goalList2: GoalList): string[] {
+export function getChangeLog(
+  goalList1: GoalList,
+  goalList2: GoalList,
+): string[] {
   const goals1 = getFlatGoals(goalList1);
   const goals2 = getFlatGoals(goalList2);
 
@@ -67,7 +70,9 @@ function getChangedPropsOfGoalsLogs(goal1: Goal, goal2: Goal): string[] {
   // props changed
   for (const prop of ["name", "jp", "skill", "time"] as const) {
     if (goal1[prop] !== goal2[prop]) {
-      logs.push(`* Changed **${prop}** from **${goal1[prop]}** to **${goal2[prop]}**`);
+      logs.push(
+        `* Changed **${prop}** from **${goal1[prop]}** to **${goal2[prop]}**`,
+      );
     }
   }
 
@@ -77,7 +82,9 @@ function getChangedPropsOfGoalsLogs(goal1: Goal, goal2: Goal): string[] {
     const synergies1 = goal1[synergyType];
     const synergies2 = goal2[synergyType];
 
-    logs = logs.concat(getChangedPropsLogs(synergyTypeStr, synergies1, synergies2));
+    logs = logs.concat(
+      getChangedPropsLogs(synergyTypeStr, synergies1, synergies2),
+    );
   }
 
   if (logs.length <= 1) {
@@ -120,7 +127,9 @@ function getChangedPropsLogs(
   const logs: string[] = [];
   for (const prop in props2 || {}) {
     if (!(prop in (props1 || {}))) {
-      logs.push(`* Added ${propsTypeName} **${prop}** with value **${props2[prop]}**`);
+      logs.push(
+        `* Added ${propsTypeName} **${prop}** with value **${props2[prop]}**`,
+      );
       continue;
     }
     if (props2[prop] !== props1[prop]) {
@@ -131,7 +140,9 @@ function getChangedPropsLogs(
   }
   for (const filter in props1 || {}) {
     if (!(filter in (props2 || {}))) {
-      logs.push(`* Removed ${propsTypeName} **${filter}** (was **${props1[filter]}**)`);
+      logs.push(
+        `* Removed ${propsTypeName} **${filter}** (was **${props1[filter]}**)`,
+      );
     }
   }
 
