@@ -1,6 +1,6 @@
 import { bingoList_v10_3_2 } from "./__testData__/bingoList_v10_3_2";
 import { bingoList_v10_4 } from "./__testData__/bingoList_v10_4";
-import { getChangeLog } from "../tools/changeLog/getChangeLog";
+import { getChangeLog } from "../../tools/changeLog/getChangeLog";
 
 describe("changeLog", () => {
   it("generates the correct changelog", () => {
