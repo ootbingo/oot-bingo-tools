@@ -2,15 +2,13 @@
   "compilerOptions": {
     "target": "es6",
     "module": "es6",
+    "outDir": "./dist",
     "declaration": true,
+    "declarationDir": "./dist/types",
+    "allowSyntheticDefaultImports": true,
     "allowJs": true,
-    "sourceMap": false,
-    "moduleResolution": "bundler",
-    "outDir": "build",
-    "rootDir": "src",
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "removeComments": false,
+    "checkJs": true,
+    "removeComments": false
   },
   "include": [
     "src"
