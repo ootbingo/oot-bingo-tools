@@ -1,6 +1,6 @@
 {
   "name": "oot-bingo-tools",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "Tools to work with the OoT Bingo generator, including analyzing rows, synergies, and frequencies",
   "exports": {
     ".": "./dist/index.js"
@@ -12,7 +12,7 @@
   "scripts": {
     "start": "ts-node src/sandbox/main.ts",
     "test": "jest",
-    "build": "rollup -c",
+    "build": "rollup -c --bundleConfigAsCjs",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "eslint tsconfig.json",
     "prepare": "npm run build"

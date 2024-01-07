@@ -14,7 +14,7 @@ export default {
   external: ["oot-bingo-lists", "oot-bingo-generator", "tslib"],
   plugins: [
     typescript({
-      tsconfig: "./tsconfig.json",
+      tsconfig: "./tsconfig.rollup.json",
       declaration: true,
     }),
     nodeResolve(),
