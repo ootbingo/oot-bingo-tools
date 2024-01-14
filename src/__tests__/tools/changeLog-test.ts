@@ -1,17 +1,32 @@
 import { bingoList_v10_3_2 } from "./__testData__/bingoList_v10_3_2";
 import { bingoList_v10_4 } from "./__testData__/bingoList_v10_4";
-import { getChangeLog } from "../../tools/changeLog/getChangeLog";
+import { printChangeLog } from "../../tools/changeLog/printChangeLog";
 
 describe("changeLog", () => {
-  it("generates the correct changelog", () => {
-    const logs = getChangeLog(bingoList_v10_3_2.normal, bingoList_v10_4.normal);
+  const consoleSpy = jest.spyOn(console, "log");
 
-    expect(logs).toMatchSnapshot();
+  beforeEach(() => {
+    consoleSpy.mockReset();
   });
 
-  it("does not display anything when there are no changes", () => {
-    const logs = getChangeLog(bingoList_v10_4.normal, bingoList_v10_4.normal);
+  it("prints the correct changelog of a normal version", () => {
+    printChangeLog(bingoList_v10_3_2.normal, bingoList_v10_4.normal);
 
-    expect(logs).toHaveLength(0);
+    expect(consoleSpy.mock.calls).toMatchSnapshot();
+  });
+
+  it("prints the correct changelog of a short version", () => {
+    printChangeLog(bingoList_v10_3_2.short, bingoList_v10_4.short);
+
+    expect(consoleSpy.mock.calls).toMatchSnapshot();
+  });
+
+  it("displays a message when there are no changes", () => {
+    printChangeLog(bingoList_v10_4.normal, bingoList_v10_4.normal);
+
+    expect(consoleSpy).toHaveBeenCalledTimes(1);
+    expect(consoleSpy).toHaveBeenCalledWith(
+      "No changes detected between these goal lists",
+    );
   });
 });

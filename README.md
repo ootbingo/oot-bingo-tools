@@ -49,23 +49,20 @@ main();
 
 ### Changelog
 
-`getChangeLog(goalList1, goalList2)`
+`printChangeLog(goalList1, goalList2)`
 
 Print the changelog containing all the changes between two bingo versions.
 The first argument should be the 'before' goal list, and the second argument the 'after'.
 You can either supply your own goal lists, or import existing ones from the `oot-bingo-lists` package.
 Note that you can't use combined goal lists as arguments.
 
-Use the accompanying `printChangeLog()` function to pretty print the results.
-
 #### Example
 
 ```ts
-import { getChangeLog, printChangeLog } from 'oot-bingo-tools';
+import { printChangeLog } from 'oot-bingo-tools';
 import { getBingoList } from 'oot-bingo-lists';
 
-const logs = getChangeLog(getBingoList("v10.3.2").normal, getBingoList("v10.4").normal);
-printChangeLog(logs);
+printChangeLog(getBingoList("v10.3.2").normal, getBingoList("v10.4").normal);
 ```
 
 ## Run source code directly
