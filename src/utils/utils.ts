@@ -1,6 +1,5 @@
 /**
  * Calculates the sum of an array of numbers
- * @internal
  * @param numbers
  */
 export function sum(numbers: number[]) {
@@ -9,7 +8,6 @@ export function sum(numbers: number[]) {
 
 /**
  * Calculates the average of an array of numbers
- * @internal
  * @param numbers
  */
 export function average(numbers: number[]) {
