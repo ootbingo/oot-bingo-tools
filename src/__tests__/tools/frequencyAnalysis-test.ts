@@ -1,7 +1,4 @@
-import {
-  analyzeFrequencies,
-  printFrequencies,
-} from "../../tools/frequencyAnalysis/frequencyAnalysis";
+import { analyzeFrequencies } from "../../tools/frequencyAnalysis/frequencyAnalysis";
 import { bingoList_v10_4 } from "./__testData__/bingoList_v10_4";
 import { standardProfile } from "./__testData__/standardProfile";
 
@@ -671,19 +668,27 @@ describe("frequencyAnalysis", () => {
   });
 
   it("pretty prints the frequencies", async () => {
-    const frequencies = await analyzeFrequencies(bingoList_v10_4, 100, "normal", 123456);
-    consoleSpy.mockClear();
-    printFrequencies(frequencies);
+    await analyzeFrequencies(bingoList_v10_4, 100, "normal", 123456);
 
-    expect(consoleSpy).toHaveBeenNthCalledWith(1, "META\n------------");
-    expect(consoleSpy).toHaveBeenNthCalledWith(2, "Iterations - Max: 16, Average: 3.97");
     expect(consoleSpy).toHaveBeenNthCalledWith(
-      3,
-      "Attempts - Successes: 100, Fails: 0, Total: 100",
+      1,
+      "Analyzing goal frequency of 100 boards, with mode normal, starting from seed 123456...",
     );
-    expect(consoleSpy).toHaveBeenNthCalledWith(4, "\nGOAL FREQUENCIES\n------------");
+    expect(consoleSpy).toHaveBeenNthCalledWith(
+      2,
+      expect.stringMatching(
+        /Finished, generated 100 boards in [0-9]+(\.[0-9]+)?s \(average iterations = 3\.97\)\n/,
+      ),
+    );
+    expect(consoleSpy).toHaveBeenNthCalledWith(3, "META\n------------");
+    expect(consoleSpy).toHaveBeenNthCalledWith(4, "Iterations - Max: 16, Average: 3.97");
     expect(consoleSpy).toHaveBeenNthCalledWith(
       5,
+      "Attempts - Successes: 100, Fails: 0, Total: 100",
+    );
+    expect(consoleSpy).toHaveBeenNthCalledWith(6, "\nGOAL FREQUENCIES\n------------");
+    expect(consoleSpy).toHaveBeenNthCalledWith(
+      7,
       "Both Rusty Switches in Spirit Temple: 67\nOpen All 6 Gold Rupee Chests: 64\n30 Different Skulltulas: 57\nAll 3 Elemental Arrows: 55\nClear 10 Silver Rupee Rooms: 46\n3 Swords, Tunics, Boots, and Shields: 43\n9 Hearts (no duping): 43\nGreen Gauntlets: 35\nAll 5 Skulltulas in Water Temple: 34\nDefeat Meg (Purple Poe): 33\nDin's Fire: 31\nFill 20 Item Inventory Slots: 29\nAll 8 Death Mountain area Skulltulas: 27\nQuiver (50): 26\nGoron Bracelet: 26\nAll 5 Lake Hylia Skulltulas: 26\nObtain all 5 Small Keys in Shadow Temple: 25\nAll 5 Skulltulas in Fire Temple: 24\nBiggoron's Sword: 24\n1 Skulltula from each Adult Dungeon: 23\n8 Hearts (no duping): 23\n5 Hearts: 23\nFree all 9 Gorons in Fire Temple: 21\nBeat the Spirit Temple: 21\nGanon's Castle Boss Key: 20\n5 Zora area HPs: 20\nBolero of Fire: 20\nObtain all 8 Small Keys in Fire Temple: 19\nMap & Compass in Spirit Temple: 19\nQuiver (40): 19\nClear 8 Silver Rupee Rooms: 18\n20 Different Skulltulas: 18\nAll 4 Market area Skulltulas: 18\nAll 3 Skulltulas in Bottom of the Well: 18\nWin Bombchu Bowling Prize: 18\nMinuet of Forest: 17\nMap & Compass in Jabu-Jabu: 17\n3 Skulltulas in Water Temple: 17\nAll 5 Skulltulas in Shadow Temple: 17\nGoron Tunic: 17\nZora Tunic: 17\nAll 4 Gerudo Valley area Skulltulas: 17\nBomb Bag (30): 17\nLens of Truth: 16\nAll 4 Wasteland/ Colossus area Skulltulas: 16\nOpen Forest Temple Boss Key Door: 16\nOpen 5 Gold Rupee Chests: 15\nSaria's Song: 15\nTwo Fairy Spells: 15\n3 Shields & 3 Boots: 15\nMap & Compass in Forest Temple: 15\nObtain 4 Different Heart Containers: 14\n8 Different Unused Keys in Gerudo Training Grounds: 14\n10 Songs: 14\nNayru's Love: 14\nAll 8 Zora's Domain area Skulltulas: 14\nGiant's Knife: 14\n7 Magic Beans: 14\nAll 3 Kokiri Forest area Skulltulas: 13\n2 Skulltulas in Lon Lon Ranch: 13\nKeaton Mask: 13\nMap & Compass in Water Temple: 13\nExactly 20 Deku Sticks: 13\nObtain 16 Different Heart Pieces: 13\nBeat the Water Temple: 13\nMap & Compass in Dodongo's Cavern: 13\n3 Swords & 3 Tunics: 13\nDefeat Barinade: 13\nSilver Scale: 13\nOpen 50 Rupee chest in Wasteland: 12\nDouble Defense: 12\nAll 4 Lost Woods area Skulltulas: 12\nDefeat 4 Different Iron Knuckles: 12\nRuto's Letter: 12\nFill all 4 Bottle Slots: 12\n500 Rupees: 12\nDefeat a Skull Kid: 12\nAll 4 Adult Zora's Domain area Skulltulas: 12\nFire Temple Boss Key: 12\nLon Lon Ranch HP: 12\nBoth HPs in Death Mountain Crater: 12\nLongshot: 11\nBullet Bag (40): 11\nObtain all 5 Small Keys in Forest Temple: 11\nAll 5 Skulltulas in Forest Temple: 11\nAll 4 Child Zora's Domain area Skulltulas: 11\nDefeat Big Octo: 11\nDefeat both Flare Dancers: 11\nAll 8 Kakariko area Skulltulas: 11\n1 Unused Small Key in each Adult Dungeon: 11\nAll 4 Lon Lon Ranch area Skulltulas: 11\n3 Swords & 3 Shields: 11\nGerudo's Card: 11\n4 Unused Keys in Forest Temple: 11\n3 Tunics: 10\nDefeat all Lizalfos in Dodongo's Cavern: 10\nPlant bean in Death Mountain Crater: 10\n4 Skulltulas in Shadow Temple: 10\n3 Lake Hylia Skulltulas: 10\nAll 5 Skulltulas in Dodongo's Cavern: 10\nBeat the Shadow Temple: 9\nDouble Magic: 9\nOpen the Final Door of Spirit Trial: 9\n7 Compasses: 9\nBoomerang: 9\nCow in House: 9\nGolden Gauntlets: 9\nAll 3 Skulltulas in Ice Cavern: 9\nPlant 5 Magic Beans: 9\nBoth Gerudo Valley HPs: 9\nOpen the Final Door of Forest Trial: 9\nOpen 3 Gold Rupee Chests: 9\nFire Arrows: 9\nAll 4 Skulltulas in Jabu-Jabu: 9\nExactly 30 Deku Sticks: 9\nDefeat Morpha: 9\nMap & Compass in Fire Temple: 8\n30 Deku Nuts: 8\nFarore's Wind: 8\nOpen the Final Door of Fire Trial: 8\nBeat Dodongo's Cavern: 8\nForest Temple Boss Key: 8\nBlue Potion: 8\nBeat the Deku Tree: 8\nObtain 3 Different Heart Containers: 8\nEpona's Song: 8\n5 Magic Beans: 7\n7 Different Unused Keys in Gerudo Training Grounds: 7\nDefeat King Dodongo: 7\nBullet Bag (50): 7\n1 Skulltula from each Child Dungeon: 7\n3 Tunics & 3 Boots: 7\nDesert Colossus HP: 7\n3 Swords & 3 Boots: 7\n7 Songs: 7\nLight Arrows: 7\nDefeat Volvagia: 7\nBoth Hyrule Field area Skulltulas: 7\nDefeat 10 Different Stalfos: 7\nDefeat Bongo-Bongo: 6\n15 Different Skulltulas: 6\nObtain 12 Different Heart Pieces: 6\n5 Unused Keys in Gerudo Training Grounds: 6\nBeat Jabu-Jabu's Belly: 6\nBottled Fairy: 6\nOpen the Final Door of Water Trial: 6\nDefeat Twinrova: 6\nMirror Shield: 6\nIce Cavern HP: 6\n3 Shields: 6\nFire Medallion: 6\nIron Boots: 6\nDefeat Phantom Ganon: 6\n6 Hearts: 6\nOpen the Final Door of Shadow Trial: 6\nFairy Bow: 6\n3 Shields & 3 Tunics: 5\nFrog's HP: 5\nClear 4 Silver Rupee Rooms: 5\nMap & Compass in Bottom of the Well: 5\nDefeat Dark Link: 5\n7 Hearts (no duping): 5\n9 Songs: 5\nBoth Gerudo's Fortress area Skulltulas: 5\n7 Different Bottled Contents: 5\nSpirit Temple Boss Key: 5\nBeat the Forest Temple: 5\nAll 4 Skulltulas in Deku Tree: 5\nDefeat Queen Gohma: 5\nMilk: 5\n7 Maps: 5\nMegaton Hammer: 5\n3 Boots: 5\nShadow Temple Boss Key: 5\nDefeat Amy (Green Poe): 5\nWater Temple Boss Key: 5\n37th Heart Piece (Child Fortress): 5\nAll 5 Skulltulas in Spirit Temple: 5\n6 Compasses: 5\n4 Compasses: 4\nGet Bombchu chest in Spirit Temple: 4\nOpen the Final Door of Light Trial: 4\nBronze Gauntlets: 4\nMap & Compass in Deku Tree: 4\nWater Medallion: 4\nStone of Agony: 4\nMap & Compass in Ice Cavern: 4\n3 Unused Keys in Gerudo Training Grounds: 4\n5 Compasses: 4\n8 Songs: 3\nDefeat Nabooru-Knuckle: 3\nOpen 3 Boss Key Doors: 3\nOpen 2 Boss Key Doors: 3\n3 Songs: 3\nGiant's Wallet: 3\nRequiem of Spirit: 3\n6 Different Unused Keys in Gerudo Training Grounds: 3\n3 Boss Keys: 3\nIce Arrows: 2\nBlue Fire: 2\nMap & Compass in Shadow Temple: 2\nBlue Gauntlets: 2\n4 Songs: 2\nFairy Slingshot: 2\n4 Unused Keys in Gerudo Training Grounds: 2\nBeat the Fire Temple: 2\n6 Maps: 2\nSilver Gauntlets: 1\nForest Medallion: 1\n6 Songs: 1\n",
     );
   });

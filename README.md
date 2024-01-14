@@ -28,20 +28,18 @@ For the bingoList argument, you can either supply your own goal list, or import 
 package.
 Note that the function is *async*, so it should be be awaited.
 
-The function returns an object containing the frequencies, and a meta object with data about the generation
-process (like how many boards failed, the average iterations needed per board, etc).
-
-Use the accompanying `printFrequencies()` function to pretty print the results.
+The function pretty prints the results,
+and returns an object containing the frequencies and a meta object with data about the generation process
+(like how many boards failed, the average iterations needed per board, etc).
 
 #### Example
 
 ```ts
-import { analyzeFrequencies, printFrequencies } from 'oot-bingo-tools';
+import { analyzeFrequencies } from 'oot-bingo-tools';
 import { getBingoList } from 'oot-bingo-lists';
 
 async function main() {
   const frequencyResult = await analyzeFrequencies(getBingoList("v10.4"), 1000, "normal");
-  printFrequencies(frequencyResult);
 }
 
 main();

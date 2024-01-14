@@ -1,8 +1,5 @@
 // Frequency Analysis
-export {
-  analyzeFrequencies,
-  printFrequencies,
-} from "./tools/frequencyAnalysis/frequencyAnalysis";
+export { analyzeFrequencies } from "./tools/frequencyAnalysis/frequencyAnalysis";
 export type {
   FrequencyAnalysisResult,
   GeneratedBoardsMeta,

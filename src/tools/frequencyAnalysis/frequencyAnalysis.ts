@@ -8,6 +8,7 @@ import { FrequencyAnalysisResult } from "./types/frequencyAnalysisTypes";
  * Performs an analysis of how frequent each goal is in a certain Bingo version.
  * It does so by generating a certain amount of boards, and then counts on how many boards each goal appears.
  * The generation of the boards is performed in parallel.
+ * The results are printed to the console, and returned as an object.
  * Note that this is an async function that should be awaited to use the results.
  * @param bingoList Goal list of a bingo version
  * @param numberOfBoards Amount of boards to generate; the more, the more accurate the results
@@ -16,6 +17,7 @@ import { FrequencyAnalysisResult } from "./types/frequencyAnalysisTypes";
  * it will generate boards from seed 150 to 1049. Defaults to 0.
  * @param [numberOfWorkers] The amount of worker threads to create for parallel task execution. Optimal value may depend on your hardware. Defaults to 8.
  * @param [profile] The profile that the generator should use.
+ * @returns {FrequencyAnalysisResult} A result object containing the frequencies, and meta statistics on the generation process.
  */
 export async function analyzeFrequencies(
   bingoList: BingoList,
@@ -50,20 +52,19 @@ export async function analyzeFrequencies(
     }
   }
 
-  const sortedFrequencies = sortObject(
-    frequencies,
-    (a, b) => b.value - a.value,
-  );
+  const sortedFrequencies = sortObject(frequencies, (a, b) => b.value - a.value);
+  const frequencyResult = { frequencies: sortedFrequencies, meta };
 
-  return { frequencies: sortedFrequencies, meta };
+  printFrequencies(frequencyResult);
+
+  return frequencyResult;
 }
 
 /**
  * Pretty prints a frequency analysis result object
  * @param frequenciesResult Object containing frequencies and board generation meta information.
- * Can be obtained by running the analyzeFrequencies function.
  */
-export function printFrequencies(frequenciesResult: FrequencyAnalysisResult) {
+function printFrequencies(frequenciesResult: FrequencyAnalysisResult) {
   const { frequencies, meta } = frequenciesResult;
   const sortedGoalNames = Object.keys(frequencies).sort(function (a, b) {
     return frequencies[b] - frequencies[a];

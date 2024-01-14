@@ -1,8 +1,5 @@
 import { getBingoList } from "oot-bingo-lists";
-import {
-  analyzeFrequencies,
-  printFrequencies,
-} from "../tools/frequencyAnalysis/frequencyAnalysis";
+import { analyzeFrequencies } from "../tools/frequencyAnalysis/frequencyAnalysis";
 import { printChangeLog } from "../tools/changeLog/printChangeLog";
 import { generateBingoBoard } from "oot-bingo-generator";
 import { exampleBingoList } from "./exampleBingoList";
@@ -27,7 +24,9 @@ async function main() {
     16,
     DEFAULT_PROFILES.blackout,
   );
-  printFrequencies(frequencies);
+  console.log(
+    `Average iterations of frequency analysis: ${frequencies.meta.iterations.average}`,
+  );
 
   // Print changelog between two bingo versions
   printChangeLog(getBingoList("v10.3.1").normal, getBingoList("v10.3.2").normal);
