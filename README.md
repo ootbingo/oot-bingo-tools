@@ -67,7 +67,7 @@ printChangeLog(getBingoList("v10.3.2").normal, getBingoList("v10.4").normal);
 
 If you would like to run the source code directly rather than install this as a package, you can clone the repo and install the dependencies:
 ```sh
-npm run install
+npm install
 ```
 
 ### Tests
